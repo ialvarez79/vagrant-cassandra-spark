@@ -8,6 +8,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.host_name = "cassandra-spark"
   config.vm.network :private_network, ip: "192.168.10.11"
   config.vm.network :forwarded_port, guest: 22, host: 1233
+  config.vm.network :forwarded_port, guest: 8080, host: 8080
+
 
   config.vm.provision "shell", inline: <<-SHELL
     apt-get update
